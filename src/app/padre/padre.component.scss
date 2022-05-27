@@ -1,0 +1,78 @@
+.clase-generica {
+  background: red;
+}
+
+.rem {
+  font-size: 1rem;
+}
+
+.rem2 {
+  font-size: 2rem;
+}
+
+.padre {
+  font-size: 16px;
+}
+
+.em {
+  font-size: 1em;
+}
+
+.abuelo {
+  height: 200px;
+  border: 5px dotted redf;
+  width: 200px;
+}
+.divs {
+  border: 5px dotted black;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  height: 20px;
+  background: red;
+  width: 100%;
+  width: 100vw;
+}
+
+.medium-width {
+  height: 20px;
+  background: blue;
+  width: 50%;
+  width: 50vw;
+}
+.width10 {
+  height: 100%;
+  background: green;
+  width: 100%;
+  width: 10vw; //View Width
+}
+
+.divs-height {
+  border: 5px dotted black;
+  height: 600px;
+  width: 300px;
+  display: flex;
+}
+
+.full-height {
+  width: 300px;
+  background: red;
+  height: 100vh; //View Height
+  //  width: 100vw;
+}
+
+.medium-height {
+  width: 300px;
+  background: blue;
+  height: 50vw;
+  // width: 50vw;
+}
+.height10 {
+  width: 300px;
+  background: green;
+  height: 10vh;
+  //width: 10vw;
+}
