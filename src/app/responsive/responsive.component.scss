@@ -2,14 +2,18 @@ main {
   background: #d9d7d5;
   width: 100%;
 }
-
+h1 {
+  margin: 100px auto;
+  width: 100%;
+  text-align: center;
+}
 div {
   background: #767775;
   width: calc(33% - 4px);
   margin: 10px 2px;
   height: 100px;
   font-size: 1rem;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   display: inline-block;
 }
 

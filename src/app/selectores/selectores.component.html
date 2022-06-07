@@ -1,0 +1,95 @@
+<h1>Un titulo con solo el selector de tipo < h1 ></h1>
+
+<h1 class="title">Otro titulo de selector de clase .title</h1>
+
+<h1 class="title otra-clase">
+  Otro titulo con muchas clases .title .otra-clase
+</h1>
+
+<h1 class="title" id="unico">Único y diferente id="unico"</h1>
+
+<h1 class="importante" id="unico">Pero yo soy más <b>importante!</b></h1>
+
+<div class="caja">
+  <h1 class="title">Yo estoy dentro :)</h1>
+</div>
+
+<h1>Selectores</h1>
+
+<p>Selector de tipo: como h1, div, span, footer, etc</p>
+<p>Selector de clase: class="my-clase"</p>
+<p>Selector de id: id="my-propio-id"</p>
+
+<p>selector universal: * -> Se aplica a toooodos los elementos del documento</p>
+
+<div class="universal">
+  <p>Parrafo</p>
+  <div>Un div</div>
+  <summary>Summary</summary>
+</div>
+
+<p>
+  Selector attributo: cuando usas los atributos de un elemento, como href,
+  class,
+</p>
+<a href="www.google.com">Ir a Google</a>
+<br />
+<a href="www.google.com" class="my-own-item">Ir a Google pero rojo</a> -->
+
+<h1>Combinadores</h1>
+<h3>De hermano, con el +</h3>
+<ul>
+  <li>Uno</li>
+  <li>Dos</li>
+  <li>Tres</li>
+</ul>
+<p class="hermano1">Yo soy el Primero</p>
+<p class="hermano2">Yo soy el Segundo</p>
+<p class="hermano3">Yo soy el Tercero</p>
+<p class="hermano2">Yo soy el Segundo</p>
+
+<h3>General de hermano ~</h3>
+<p class="hermano-superior">Yo soy el Primero</p>
+<p>Yo soy el Segundo</p>
+<p>Yo soy el Tercero</p>
+<span>Yo soy un Primo! </span>
+<p>Yo soy el Cuarto</p>
+<p>Yo soy el Quinto</p>
+
+<h3>Hijo!</h3>
+<p>Con el ></p>
+<div class="padre">
+  <span>Yo también :(</span>
+  <span>Yo también :(</span>
+  <span>Yo también :(</span>
+  <span>Yo también :(</span>
+  <p>Yo soy tu hijo</p>
+  <p>Yo soy tu hijo</p>
+  <p>Yo soy tu hijo</p>
+</div>
+
+<p>Con Espacio</p>
+<div class="madre">
+  <h3 class="no">Uno</h3>
+  <h3 class="no">Dos</h3>
+  <h3 class="si">Tres</h3>
+  <div>
+    <h3 class="si">Cuatro?</h3>
+    <div>
+      <div>
+        <div class="hayotraclasequesecuela">
+          <span class="si">Yo tambien</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>Y el :no</p>
+<div class="heroe">
+  <li class="superman">Soy Superman</li>
+  <li class="batman">Soy Batman</li>
+  <li class="flash">Soy Flash</li>
+</div>
+
+<app-hijo></app-hijo>

@@ -1,0 +1,92 @@
+//Selectores de Tipo, donde se escogen los tags de html como h1, span, p, etc, tienen la menor especificidad
+h1 {
+  color: red;
+}
+
+//selectores de clase, tienen mayor relevancia que el selector de tipo
+.title {
+  color: green;
+}
+
+.otra-clase {
+  color: violet;
+}
+
+//Selector de id
+#unico {
+  color: orange;
+}
+
+.importante {
+  color: gray !important;
+}
+
+.caja {
+  h1 {
+    color: cadetblue;
+  }
+}
+
+//Selectores
+//Global
+* {
+  /*   background: midnightblue;
+  color: white */
+}
+
+.universal > * {
+  background-color: bisque;
+}
+
+//Atributo
+a[href="www.google.com"] {
+  color: rgb(92, 12, 153);
+}
+a[class="my-own-item"] {
+  color: red;
+}
+
+//Combinadores Hermano
+li:first-child + li {
+  font-weight: 900;
+}
+.hermano1 + .hermano2 {
+  font-style: italic;
+}
+
+.hermano-superior ~ p {
+  color: rgb(5, 195, 84);
+}
+
+//Padre
+.padre > p {
+  color: red;
+}
+.padre > * {
+  //background-color: rgb(241, 173, 173);
+}
+
+.madre {
+  .si {
+    color: rgb(89, 124, 25);
+  }
+}
+
+//:not
+.heroe > :not(.batman) {
+  color: rgb(124, 25, 50);
+  font-style: italic;
+}
+
+.heroe::after {
+  content: "→";
+}
+
+.heroe {
+  background: yellow;
+}
+
+.clase-generica {
+  background: yellow;
+  height: 200px;
+}

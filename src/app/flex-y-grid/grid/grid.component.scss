@@ -1,0 +1,51 @@
+.container {
+  margin-top: 50px;
+  border: 2px dotted black;
+  display: grid;
+  grid-gap: 10px 20px;
+  grid-template-rows: 100px 1fr auto;
+  grid-template-columns: 1fr 200px;
+  grid-template-areas:
+    "header  header"
+    "content aside "
+    "footer  aside ";
+}
+
+header {
+  background: #2a3642;
+  grid-area: header;
+}
+
+.content {
+  grid-area: content;
+  background-color: #bdcfcb;
+  height: 400px;
+}
+
+aside {
+  grid-area: aside;
+  background: #6589b0;
+}
+footer {
+  grid-area: footer;
+  background: #216a91;
+  height: 100px;
+}
+
+p {
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .container {
+    grid-gap: 0;
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header "
+      "content"
+      "aside  "
+      "footer ";
+  }
+}
