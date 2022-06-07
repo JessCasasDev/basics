@@ -10,6 +10,8 @@ import { SelectoresComponent } from './selectores/selectores.component';
 import { FlexYGridComponent } from './flex-y-grid/flex-y-grid.component';
 import { FlexComponent } from './flex-y-grid/flex/flex.component';
 import { GridComponent } from './flex-y-grid/grid/grid.component';
+import { FlexExplanationComponent } from './flex-y-grid/flex-explanation/flex-explanation.component';
+import { GridExplanationComponent } from './flex-y-grid/grid-explanation/grid-explanation.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { GridComponent } from './flex-y-grid/grid/grid.component';
     SelectoresComponent,
     FlexYGridComponent,
     FlexComponent,
-    GridComponent
+    GridComponent,
+    FlexExplanationComponent,
+    GridExplanationComponent
   ],
   imports: [
     BrowserModule,

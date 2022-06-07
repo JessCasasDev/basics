@@ -1,0 +1,240 @@
+<h1>Flexbox</h1>
+
+<h2>Contenedor</h2>
+<ul>
+  <li>
+    Propiedad Display: <b>Flex</b> - Esto nos pondrá todos los items hijos como
+    flex, lo que hara que se acomoden en el Contenedor
+  </li>
+</ul>
+<div class="container">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+</div>
+
+<hr />
+<ul>
+  <li>
+    Propiedad Flex-direction: <b>row/column/row-reverse/column-reverse</b> -
+    Esto nos pondrá todos los items hijos en direccion horizontal o vertical
+  </li>
+</ul>
+
+<p>Row</p>
+<div class="container row">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+</div>
+<p>Column</p>
+<div class="container column">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+</div>
+<p>Row Reverse</p>
+<div class="container row-reverse">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+</div>
+<p>Column reverse</p>
+<div class="container column-reverse">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+</div>
+<hr />
+
+<ul>
+  <li>
+    Propiedad Flex-wrap: <b>wrap/no-wrap</b> - Esto nos repartira los hijos en
+    el Contenedor de manera fluida
+  </li>
+</ul>
+
+<p>Wrap</p>
+<div class="container wrap">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+</div>
+<p>No Wrap</p>
+<div class="container no-wrap">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+</div>
+
+<hr />
+<h2>Items</h2>
+<ul>
+  <li>
+    Propiedad flex-grow: <b>Valor numerico: 0, 1, 2 etc</b> - Esto nos indicara
+    cuanto espacio un elemento puede tomar, entre mayor sea el número más
+    espacio va a tomar
+  </li>
+</ul>
+<p>flex-grow</p>
+<div class="container flex-grow">
+  <div class="item1">item 1</div>
+  <div class="item2">item 2</div>
+  <div class="item3">item 3</div>
+  <div class="item4">item 4</div>
+  <div class="item5">item 5</div>
+</div>
+<ul>
+  <li>
+    Propiedad flex-shrink: <b>Valor numerico: 0, 1, 2 etc</b> - Esto nos
+    indicara cuanto espacio un elemento puede contraerse, entre mayor sea el
+    número menor espacio va a tomar
+  </li>
+</ul>
+<p>flex-shrink</p>
+<div class="container flex-shrink">
+  <div class="item1">item 1</div>
+  <div class="item2">item 2</div>
+  <div class="item3">item 3</div>
+  <div class="item4">item 4</div>
+  <div class="item5">item 5</div>
+</div>
+<ul>
+  <li>
+    Propiedad flex-basis:
+    <b>tamaño en px/em, auto, max-content, min-content, fit-content</b> - Esto
+    nos indicara el tamaño inicial del elemento
+  </li>
+</ul>
+<p>flex-basis</p>
+<div class="container flex-basis">
+  <div class="item1">item 1</div>
+  <div class="item2">item 2</div>
+  <div class="item3">item 3</div>
+  <div class="item4">item 4</div>
+  <div class="item5">item 5</div>
+  <div class="item6">item 6</div>
+</div>
+
+<ul>
+  <li>
+    Propiedad flex: (short)
+    <b>flex-grow flex-shrink flex-basis</b> - Esto es la manera corta de
+    escribir todas las propiedades de arriba
+  </li>
+</ul>
+<p>flex</p>
+<div class="container flex-flex">
+  <div class="item1">item 1</div>
+  <div class="item2">item 2</div>
+  <div class="item3">item 3</div>
+  <div class="item4">item 4</div>
+  <div class="item5">item 5</div>
+  <div class="item6">item 6</div>
+</div>
+<hr />
+<h3>Alineacion de contenido</h3>
+<p>Align-items: Para alinearlos de manera vertical</p>
+<p>flex start</p>
+<div class="container align flex-start">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+</div>
+<p>stretch</p>
+<div class="container align flex-stretch">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+</div>
+<p>flex-end</p>
+<div class="container align flex-end">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+</div>
+<p>flex-center</p>
+<div class="container align flex-center">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+</div>
+<hr />
+<p>justify-content: Para alinearlos de manera horizontal</p>
+
+<p>flex-start</p>
+<div class="container justify flex-start">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+</div>
+<p>flex-end</p>
+<div class="container justify flex-end">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+</div>
+<p>flex-center</p>
+<div class="container justify flex-center">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+</div>
+<p>space-evenly</p>
+<div class="container justify space-evenly">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+</div>
+<p>space-around</p>
+<div class="container justify space-around">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+</div>
+<p>space-between</p>
+<div class="container justify space-between">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+</div>
+
+<hr>
+<h2>centrar un item</h2>
+<div class="container center-item">
+    <p>Estoy Centrado :)</p>
+</div>

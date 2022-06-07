@@ -1,0 +1,158 @@
+h2 {
+  text-decoration: underline;
+}
+
+.container {
+  display: flex;
+  margin: 5px;
+  border: 1px dotted black;
+  div {
+    margin: 2px;
+    background-color: bisque;
+  }
+}
+
+hr {
+  margin: 50px;
+  border: 5px solid red;
+}
+
+.row {
+  flex-direction: row; //Por defecto
+}
+
+.column {
+  flex-direction: column;
+}
+.row-reverse {
+  flex-direction: row-reverse;
+}
+.column-reverse {
+  flex-direction: column-reverse;
+}
+.wrap {
+  flex-wrap: wrap;
+  div {
+    width: 500px;
+  }
+}
+.no-wrap {
+  flex-wrap: nowrap;
+  div {
+    width: 500px;
+  }
+}
+
+.flex-grow {
+  .item1 {
+    flex-grow: 1;
+  }
+  .item2 {
+    flex-grow: 1;
+  }
+  .item3 {
+    flex-grow: 2;
+  }
+  .item4 {
+    flex-grow: 3;
+  }
+  .item5 {
+    flex-grow: 1;
+  }
+}
+
+.flex-shrink {
+  div {
+    width: 500px;
+  }
+  .item1 {
+    flex-shrink: 1;
+  }
+  .item2 {
+    flex-shrink: 1;
+  }
+  .item3 {
+    flex-shrink: 2;
+  }
+  .item4 {
+    flex-shrink: 3;
+  }
+  .item5 {
+    flex-shrink: 1;
+  }
+}
+
+.flex-basis {
+  .item1 {
+    flex-basis: 200px;
+  }
+  .item2 {
+    flex-basis: auto;
+  }
+  .item3 {
+    flex-basis: max-content;
+  }
+  .item4 {
+    flex-basis: min-content;
+  }
+  .item5 {
+    flex-basis: fit-content;
+  }
+  .item6 {
+    flex-basis: content;
+  }
+}
+
+.flex-flex {
+  div {
+    width: 200px;
+  }
+  * {
+    flex: 1 1 auto;
+  }
+}
+.align {
+  height: 200px;
+}
+.align.flex-stretch {
+  align-items: stretch;
+}
+
+.align.flex-start {
+  align-items: flex-start;
+}
+
+.align.flex-end {
+  align-items: flex-end;
+}
+
+.align.flex-center {
+  align-items: center;
+}
+
+.justify {
+  width: 100%;
+}
+.justify.space-evenly {
+  justify-content: space-evenly;
+}
+.justify.flex-start {
+  justify-content: flex-start;
+}
+.justify.flex-end {
+  justify-content: flex-end;
+}
+.justify.flex-center {
+  justify-content: center;
+}
+.justify.space-around {
+  justify-content: space-around;
+}
+.justify.space-between {
+  justify-content: space-between;
+}
+.center-item {
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+}
