@@ -1,0 +1,7 @@
+@import 'colors';
+
+@mixin darkTheme {
+    --primary: #{$primary-dark};
+    --secondary: #{$secondary-dark};
+    --color-text: #{$color-text-dark};
+}

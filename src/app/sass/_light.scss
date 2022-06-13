@@ -1,0 +1,7 @@
+@import 'colors';
+
+@mixin lightTheme {
+    --primary: #{$primary-light};
+    --secondary: #{$secondary-light};
+    --color-text: #{$color-text-light};
+}

@@ -1,0 +1,161 @@
+hr {
+  padding: 100px;
+}
+//Variables con Sass
+$primary: #55a;
+$secondary: #6b6;
+$text: #fff;
+
+h2 {
+  background-color: $primary;
+  border: 2px dotted $secondary;
+  color: $text;
+  margin: 10px;
+  text-align: center;
+  padding: 5px;
+}
+
+//Variables con CSS
+div {
+  --primary: #55a;
+  --secondary: #6b6;
+  --text: #fff;
+
+  h2 {
+    background-color: var(--primary);
+    border: 2px dotted var(--secondary);
+    color: var(--text);
+  }
+}
+
+:root {
+  --background-button: red;
+  --color-button: red;
+  --border: red;
+}
+
+.light {
+  --background-button: #cd96b3;
+  --color-button: #756967;
+  --border: #756967;
+}
+
+.dark {
+  --background-button: #7f93a2;
+  --color-button: #f3eae5;
+  --border: #756967;
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--background-button);
+  color: var(--color-button);
+  border-color: var(--border);
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+
+//Anidacion
+.container {
+  padding: 30px;
+  background-color: #8863b4;
+
+  &__inside {
+    padding: 20px;
+    background-color: #a385c5;
+
+    &--item {
+      padding: 10px;
+      background: #cabade;
+      transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      &:hover {
+        background: #191022;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+
+    p {
+      padding: 15px 0;
+    }
+
+    p:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+//Imports
+@import "dark";
+@import "light";
+.dark {
+  //Include
+  @include darkTheme;
+}
+.light {
+  @include lightTheme;
+}
+nav {
+  background-color: var(--primary);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 30px;
+  a {
+    cursor: pointer;
+
+    color: var(--secondary);
+
+    &:hover {
+      color: var((--color-text));
+      text-decoration: underline;
+    }
+  }
+}
+
+//Mixins con parametros
+@mixin agrandarTexto($propiedad) {
+  font-size: $propiedad;
+}
+
+.pequeño {
+  @include agrandarTexto(12px);
+}
+
+.mediano {
+  @include agrandarTexto(24px);
+}
+
+.grande {
+  @include agrandarTexto(48px);
+}
+
+// Extend
+%caja {
+  border-radius: 20px;
+  background: #2a4353;
+  color: #d5d8dd;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  margin: 15px;
+  display: inline-block;
+}
+
+.caja1 {
+  @extend %caja;
+}
+
+.caja2 {
+  @extend %caja;
+  background: #437356;
+  color: #fae3b4;
+}
+
+.caja3 {
+  @extend %caja;
+  background-color: #1c1919;
+  color: #eb5937;
+}

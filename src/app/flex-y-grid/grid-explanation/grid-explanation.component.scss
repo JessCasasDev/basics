@@ -10,11 +10,13 @@ hr {
 }
 .simple {
   grid-template-columns: 400px 800px 200px;
-  grid-template-rows: repeat(3, 100px);
+  grid-template-rows: repeat(2, 100px);
 }
+
 div {
   background-color: #a76871;
   color: white;
+  padding: 10px;
 }
 
 .flexible {
@@ -36,6 +38,8 @@ div {
 }
 
 .item1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
   grid-column: 1 / 3;
   grid-row: 1;
   text-align: center;
