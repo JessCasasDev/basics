@@ -13,6 +13,7 @@ import { GridComponent } from './flex-y-grid/grid/grid.component';
 import { FlexExplanationComponent } from './flex-y-grid/flex-explanation/flex-explanation.component';
 import { GridExplanationComponent } from './flex-y-grid/grid-explanation/grid-explanation.component';
 import { SassComponent } from './sass/sass.component';
+import { JavascriptComponent } from './javascript/javascript.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SassComponent } from './sass/sass.component';
     GridComponent,
     FlexExplanationComponent,
     GridExplanationComponent,
-    SassComponent
+    SassComponent,
+    JavascriptComponent
   ],
   imports: [
     BrowserModule,

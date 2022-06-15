@@ -5,6 +5,7 @@ import { FlexYGridComponent } from './flex-y-grid/flex-y-grid.component';
 import { FlexComponent } from './flex-y-grid/flex/flex.component';
 import { GridExplanationComponent } from './flex-y-grid/grid-explanation/grid-explanation.component';
 import { GridComponent } from './flex-y-grid/grid/grid.component';
+import { JavascriptComponent } from './javascript/javascript.component';
 import { ResponsiveComponent } from './responsive/responsive.component';
 import { SassComponent } from './sass/sass.component';
 import { SelectoresComponent } from './selectores/selectores.component';
@@ -22,7 +23,8 @@ const routes: Routes = [
       { path: 'grid', component: GridComponent },
     ],
   },
-  {path: 'sass', component: SassComponent}
+  {path: 'sass', component: SassComponent},
+  {path: 'javascript', component: JavascriptComponent}
 ];
 
 @NgModule({
