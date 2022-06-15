@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-javascript',
   templateUrl: './javascript.component.html',
@@ -20,20 +20,42 @@ export class JavascriptComponent {
     return true;
   };
 
-  constructor() {
+  constructor(private http: HttpClient) {
+    this.tipos();
+    //this.diferenciaEntreVarYLet();
+    //this.destructuringArrays();
+    //this.destructuringObjects();
+    //this.spreadoperator();
+    //this.operators();
+    // this.promises();
+    //this.promiseWithAsync();
+    //this.promiseWithAsyncReject();
+    //this.tryCatch();
+    //this.promesasEnParalelo();
+    //this.promesaRace();
+  }
+
+  tipos() {
     console.log(typeof this.indefinido);
     console.log(typeof this.boleano);
     console.log(typeof this.numero);
     console.log(typeof this.texto);
     console.log(typeof this.symbol);
+    const obj1 = { '1': 1 };
+    const obj2 = { 1: 1 };
+    console.log(obj1[1], obj2['1']);
+    //Con Symbol
+    const s1 = Symbol('id');
+    const s2 = Symbol('id');
+    const obj3 = { s1: 1 };
+    const obj4 = { s2: 1 };
+    /*    console.log(obj3.s2);
+    console.log(obj4.s1); */
+    console.log(obj3.s1);
+    console.log(obj4.s2);
     console.log(typeof this.nulo);
     console.log(typeof this.objecto);
     console.log(typeof this.funcion);
-    //this.diferenciaEntreVarYLet();
-    //this.destructuringArrays();
-    //this.destructuringObjects();
-    //this.spreadoperator();
-    this.operators();
   }
 
   variables() {
@@ -205,6 +227,115 @@ var p = new Person();
 
   f() {
     console.log('mirame');
+  }
+
+  promises() {
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('promised :)');
+      }, 300);
+    });
+    console.log('Before');
+    promise.then(console.log);
+    console.log('After');
+  }
+
+  async promiseWithAsync() {
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('promised :)');
+      }, 300);
+    });
+
+    console.log('Before');
+    //await promise.then(console.log);
+    //o uno puede crear una variable con el resultado
+    const resultado = await promise;
+    console.log(resultado);
+    console.log('After');
+  }
+
+  async promiseWithAsyncReject() {
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        reject('Error :(');
+      }, 300);
+    });
+
+    //await promise.then(console.log);
+
+    try {
+      await promise.then(console.log);
+    } catch (error) {
+      console.log('Estoy deteniendo el error!', error);
+    }
+  }
+
+  tryCatch() {
+    try {
+      throw 'Error :O';
+    } catch (error) {
+      console.log('Siempre detengo los errores', error);
+    }
+  }
+
+  promesa(timeout: number) {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve(`Yes!, solved in ${timeout}`), timeout);
+    });
+  }
+
+  promesasEnParalelo() {
+    const promise1 = this.promesa(100);
+    const promise2 = this.promesa(400);
+    const promise3 = this.promesa(200);
+
+    promise1.then(console.log);
+    promise2.then(console.log);
+    promise3.then(console.log);
+
+    //Todas van a correr al mismo tiempo
+    const result = Promise.all([
+      this.promesa(100),
+      this.promesa(300),
+      this.promesa(200),
+    ]);
+
+    result.then(console.log);
+  }
+
+  promesaRace() {
+    //Se cumple cuando al menos una de la lista se cumpla
+    const promise1 = this.promesa(1000);
+    const promise2 = this.promesa(400);
+    const promise3 = this.promesa(200);
+    const promiseError = new Promise((resolve, reject) =>
+      reject('Nop, not in my watch')
+    );
+
+    const result = Promise.race([promise1, promise2, promise3]);
+    //Aca solo retorna el primer valor que termina
+    result.then(console.log);
+
+    //  Si es con error, falla al si alguna falla
+    /* const resultWithError = Promise.race([promise1, promise2, promise3, promiseError])
+    resultWithError.then(console.log) */
+  }
+
+  promesaAllSettled() {
+    //Se retorna el resultado de todas las promesas, así hayan fallado
+    const promise1 = this.promesa(1000);
+    const promise2 = this.promesa(400);
+    const promise3 = this.promesa(200);
+    const promiseError = new Promise((resolve, reject) =>
+      reject('Nop, not in my watch')
+    );
+
+    // const result = Promise.allSettled([promise1, promise2, promise3])
+    //Aca solo retorna el primer valor que termina
+    //result.then(console.log)
+    //Ejemplo
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled
   }
 }
 

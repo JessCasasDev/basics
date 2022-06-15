@@ -14,6 +14,7 @@ import { FlexExplanationComponent } from './flex-y-grid/flex-explanation/flex-ex
 import { GridExplanationComponent } from './flex-y-grid/grid-explanation/grid-explanation.component';
 import { SassComponent } from './sass/sass.component';
 import { JavascriptComponent } from './javascript/javascript.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { JavascriptComponent } from './javascript/javascript.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
