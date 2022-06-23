@@ -1,0 +1,98 @@
+<div class="container">
+  <h1>Typescript</h1>
+
+  <h2>Un Superset</h2>
+  <p>
+    Typescript es un <b>superset</b> de JavaScript. ¿Que significa que sea un
+    superset? Que tiene todas las cosas de Jvascript pero le agrega
+    <b>MAS</b> cosas y funcionalidades que ayudan a mejorar el proceso de
+    desarrollo
+  </p>
+  <br />
+  <h2>¿Que pasa con Typescript cuando se va al navegador?</h2>
+  <p>
+    Cuando Typescript es <b>compilado</b> todo lo que traia Typescript se va y
+    solo queda JavaScript, por eso en el navegador no se encontraran cosas como
+    <i>interfaces, typos, etc</i>
+  </p>
+  <br />
+
+  <h2>¿Que beneficios trae Typescript?</h2>
+  <ul>
+    El Tipado estatico
+  </ul>
+  <p>en Javascript</p>
+  <code>let edad = 1; edad = 'algo mas' </code>
+  <p>en Typescript</p>
+  <code>let edad:number = 1; edad = 'algo más' //Error sintactico </code>
+  <br />
+
+  <ul>
+    Interfaces
+  </ul>
+  <img src="../../assets/interfaces.PNG" />
+
+  <p>Tambien existen los tipos de javascript</p>
+  <ol>
+    String
+  </ol>
+  <ol>
+    Number
+  </ol>
+  <ol>
+    Boolean
+  </ol>
+  <ol>
+    void
+  </ol>
+  <ol>
+    Array
+  </ol>
+  <br />
+
+  <ul>
+    Genericos
+  </ul>
+  <p>
+    Se declaran entre < y > donde el tipo se aplica en el momento de ejecucion
+  </p>
+  <img src="../../assets/generic.PNG" />
+
+  <p>{{ displayString("String") }}</p>
+  <p>{{ displayBoolean(true) }}</p>
+  <h3>Con Generic</h3>
+  <p>{{ display(false) }}</p>
+  <p>{{ display("Otro string") }}</p>
+  <p>{{ display(person) }}</p>
+  <p>{{ metodoGenericoDeArreglos(array) }}</p>
+  <!--  <p>{{ metodoGenericoDeArreglos(person) }}</p> -->
+
+  <img src="../../assets/multipleGenerico.PNG" /><br />
+  <img src="../../assets/multipleGenericoEjemplo.PNG" />
+  <br />
+
+  <ul>
+    Casting de tipos
+  </ul>
+  <p>Cuando queremos que un tipo sea de otro tipo</p>
+  <img src="../../assets/casting.PNG" />
+
+  <br />
+
+  <input class="in" />
+
+  <ul>
+    Enumerables
+  </ul>
+  <p>
+    Son objetos que enumeran los elementos dentro de él. Se usa principalmente
+    para definir roles o configuraciones y evitar el uso de constantes
+  </p>
+  <img src="../../assets/enum1.PNG" />
+  <br>
+  <img src="../../assets/enum2.PNG" />
+
+  <br />
+
+  <input class="in" />
+</div>

@@ -15,6 +15,7 @@ import { GridExplanationComponent } from './flex-y-grid/grid-explanation/grid-ex
 import { SassComponent } from './sass/sass.component';
 import { JavascriptComponent } from './javascript/javascript.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TypescriptComponent } from './typescript/typescript.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     FlexExplanationComponent,
     GridExplanationComponent,
     SassComponent,
-    JavascriptComponent
+    JavascriptComponent,
+    TypescriptComponent
   ],
   imports: [
     BrowserModule,

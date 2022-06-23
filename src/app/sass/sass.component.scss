@@ -6,6 +6,7 @@ $primary: #55a;
 $secondary: #6b6;
 $text: #fff;
 
+
 h2 {
   background-color: $primary;
   border: 2px dotted $secondary;
@@ -55,6 +56,7 @@ button {
   padding: 10px;
   margin: 10px;
 }
+
 
 //Anidacion
 .container {
@@ -115,21 +117,22 @@ nav {
   }
 }
 
-//Mixins con parametros
-@mixin agrandarTexto($propiedad) {
+//Mixins con parametros 
+@mixin agrandarTexto($propiedad, $propiedad2) {
   font-size: $propiedad;
+  background: $propiedad2
 }
 
 .pequeño {
-  @include agrandarTexto(12px);
+  @include agrandarTexto(12px, red);
 }
 
 .mediano {
-  @include agrandarTexto(24px);
+  @include agrandarTexto(24px, rgb(7, 100, 194));
 }
 
 .grande {
-  @include agrandarTexto(48px);
+  @include agrandarTexto(48px, gray);
 }
 
 // Extend
@@ -158,4 +161,5 @@ nav {
   @extend %caja;
   background-color: #1c1919;
   color: #eb5937;
+  border: 3px dotted yellow;
 }

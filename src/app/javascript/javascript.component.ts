@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
+interface Y {
+  p: number;
+  j: string;
+  m: boolean;
+}
 @Component({
   selector: 'app-javascript',
   templateUrl: './javascript.component.html',
@@ -21,18 +27,21 @@ export class JavascriptComponent {
   };
 
   constructor(private http: HttpClient) {
-    this.tipos();
+    //this.tipos();
     //this.diferenciaEntreVarYLet();
+    //this.stringYTemplateLiteral()
     //this.destructuringArrays();
     //this.destructuringObjects();
+    //this.destructuration({p: 1, j: 'hola', m: true})
     //this.spreadoperator();
     //this.operators();
-    // this.promises();
+    //this.promises();
     //this.promiseWithAsync();
-    //this.promiseWithAsyncReject();
+    // this.promiseWithAsyncReject();
     //this.tryCatch();
     //this.promesasEnParalelo();
     //this.promesaRace();
+    this.promesaAllSettled();
   }
 
   tipos() {
@@ -41,18 +50,21 @@ export class JavascriptComponent {
     console.log(typeof this.numero);
     console.log(typeof this.texto);
     console.log(typeof this.symbol);
-    const obj1 = { '1': 1 };
-    const obj2 = { 1: 1 };
+    const obj1 = { '1': 10 };
+    const obj2 = { 1: 20 };
     console.log(obj1[1], obj2['1']);
     //Con Symbol
     const s1 = Symbol('id');
     const s2 = Symbol('id');
+
     const obj3 = { s1: 1 };
     const obj4 = { s2: 1 };
-    /*    console.log(obj3.s2);
-    console.log(obj4.s1); */
+
     console.log(obj3.s1);
-    console.log(obj4.s2);
+    /* 
+    console.log(obj4.s1);
+    console.log(obj3.s1);
+    console.log(obj4.s1); */
     console.log(typeof this.nulo);
     console.log(typeof this.objecto);
     console.log(typeof this.funcion);
@@ -61,6 +73,10 @@ export class JavascriptComponent {
   variables() {
     let variable1 = 1;
     const variable2 = 2;
+    const obj = {
+      name: 'jess',
+    };
+    obj.name = 'Carlos';
     var variable3 = 3;
 
     // Let deja reasignar el valor
@@ -78,7 +94,7 @@ export class JavascriptComponent {
   diferenciaEntreVarYLet() {
     //Let tiene un alcance de bloque, el var tiene un enfoque mas global
     let i = 1;
-    if (i === 0) {
+    if (i === 1) {
       let i = 2; //este i es diferente al de la linea 53
     } else {
       let i = 3; //este i es diferente al de la linea 55 y 57
@@ -93,11 +109,16 @@ export class JavascriptComponent {
     } else {
       var t = 3;
     }
-
+    for (let index = 0; index < 5; index++) {
+      setTimeout(() => console.log(index), 1000);
+    }
+    for (var index = 0; index < 5; index++) {
+      setTimeout(() => console.log(index), 1000);
+    }
     console.log(t); //Va a imprimir 2
 
-    // console.log(bar); // undefined
-    // console.log(foo); // ReferenceError: foo no está definido
+    /* console.log(bar); // undefined
+    console.log(foo); // ReferenceError: foo no está definido */
     var bar = 1;
     let foo = 2;
   }
@@ -105,16 +126,18 @@ export class JavascriptComponent {
   stringYTemplateLiteral() {
     const n = 9;
     let str = 'String normalito';
-    let templateLiteral = `Este número será un string ahora: ${n}`;
+    let templateLiteral = `Este número será un
+    
+    
+    string ahora: ${n} seguir escribiendo`;
+    console.log(templateLiteral);
   }
 
-  /* 
-  function f1(a: number, b:number) {
+  /*   function f1(a: number, b:number) {
     let y = 1;
     return a+b;
-  } 
-  y ya no tiene valor fuera de la funcion
-  */
+  }  */
+  //y ya no tiene valor fuera de la funcion
 
   /* El problema con las funciones y el this
   
@@ -158,19 +181,31 @@ var p = new Person();
       lastName: 'Casas',
       programmingLanguage: 'Angular',
     };
-    const { name, lastName, programmingLanguage: languages } = { ...obj };
+    const { name, lastName, programmingLanguage: languages } = obj;
 
     console.log('Name', name);
     console.log('Lastname', lastName);
     console.log('languages', languages);
+
+    const phones = 9999;
+    let obj1 = { phones }; // {phones: phones}
+    console.log(obj1);
+  }
+
+  destructuration(parameter: Y) {
+    const { p: name, m: lastname } = parameter;
+    console.log(name, lastname);
   }
 
   spreadoperator() {
     const array = [1, 2, 3, 4, 5];
     const array2 = [99, 98, 97];
+
     const nuevoArray = [...array, ...array2];
+
     array2.pop();
     array.splice(1, 2);
+
     console.log({ array });
     console.log({ array2 });
     console.log({ nuevoArray });
@@ -180,6 +215,9 @@ var p = new Person();
       lastname: 'Perez',
       age: 9,
       music: 'Pop',
+      obj4: {
+        hola: 'mundo',
+      },
     };
 
     const obj2 = {
@@ -189,20 +227,23 @@ var p = new Person();
 
     const obj3 = { ...obj, ...obj2 };
     obj.age = 15;
+
+    obj3.obj4.hola = 'Nooooo';
     console.log({ obj });
-    console.log({ obj2 });
+    //console.log({ obj2 });
     console.log({ obj3 });
   }
 
   operators() {
     //Opertor ||
     console.log('||');
+    //Falsy false, 0, '', length= 0,
     const y = this.indefinido || this.numero;
     console.log({ y });
     const x = this.texto || this.numero;
     console.log({ x });
     //Valor falsy
-    const m = 0 || this.texto;
+    const m = 0 || null || this.texto;
     console.log({ m });
     console.log('&&');
     // operator &&
@@ -218,9 +259,11 @@ var p = new Person();
     true && this.f();
 
     //Nulish Operator
-    const g = 0 ?? 1;
+    // udefined o null
+    //{key?:0}
+    const g = 0 ?? 9;
     const p = undefined ?? 9;
-    const j = null ?? 15;
+    const j = null ?? null ?? 99;
 
     console.log({ g, p, j });
   }
@@ -295,13 +338,13 @@ var p = new Person();
     promise3.then(console.log);
 
     //Todas van a correr al mismo tiempo
-    const result = Promise.all([
+    /*   const result = Promise.all([
       this.promesa(100),
       this.promesa(300),
       this.promesa(200),
     ]);
 
-    result.then(console.log);
+    result.then(console.log); */
   }
 
   promesaRace() {
@@ -310,16 +353,21 @@ var p = new Person();
     const promise2 = this.promesa(400);
     const promise3 = this.promesa(200);
     const promiseError = new Promise((resolve, reject) =>
-      reject('Nop, not in my watch')
+      setTimeout(() => reject('Nop, not in my watch'), 9000)
     );
 
-    const result = Promise.race([promise1, promise2, promise3]);
+    //  const result = Promise.race([promise1, promise2, promise3]);
     //Aca solo retorna el primer valor que termina
-    result.then(console.log);
+    // result.then(console.log);
 
     //  Si es con error, falla al si alguna falla
-    /* const resultWithError = Promise.race([promise1, promise2, promise3, promiseError])
-    resultWithError.then(console.log) */
+    const resultWithError = Promise.race([
+      promise1,
+      promise2,
+      promise3,
+      promiseError,
+    ]);
+    resultWithError.then(console.log);
   }
 
   promesaAllSettled() {
@@ -331,9 +379,9 @@ var p = new Person();
       reject('Nop, not in my watch')
     );
 
-    // const result = Promise.allSettled([promise1, promise2, promise3])
+    //const result = Promise.allSettled([promise1, promise2, promise3])
     //Aca solo retorna el primer valor que termina
-    //result.then(console.log)
+    //result.then(console.log);
     //Ejemplo
     //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled
   }

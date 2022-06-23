@@ -9,6 +9,7 @@ import { JavascriptComponent } from './javascript/javascript.component';
 import { ResponsiveComponent } from './responsive/responsive.component';
 import { SassComponent } from './sass/sass.component';
 import { SelectoresComponent } from './selectores/selectores.component';
+import { TypescriptComponent } from './typescript/typescript.component';
 
 const routes: Routes = [
   { path: 'selectores', component: SelectoresComponent },
@@ -24,7 +25,8 @@ const routes: Routes = [
     ],
   },
   {path: 'sass', component: SassComponent},
-  {path: 'javascript', component: JavascriptComponent}
+  {path: 'javascript', component: JavascriptComponent},
+  {path: 'typescript', component: TypescriptComponent},
 ];
 
 @NgModule({
